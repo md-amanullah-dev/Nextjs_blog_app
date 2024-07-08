@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "../Assets/img1.jpeg";
 import Arror from "../Assets/arror.png";
+import Logo from "../Assets/img1.jpeg";
 
 export default function Header() {
   return (
