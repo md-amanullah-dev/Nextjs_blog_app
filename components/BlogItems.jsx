@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function BlogItems() {
   return (
-    <div className="max-w-[330px] sm:max-w-[300px] bg-white-600 border border-black hover:shadow-[-7px_7px_0px #000000] ">
+    <div className="max-w-[330px] sm:max-w-[300px] bg-white-600 border border-black hover:shadow-[-7px_7px_0px] ">
       <Image
         src={blog_data[0].image}
         width={400}
