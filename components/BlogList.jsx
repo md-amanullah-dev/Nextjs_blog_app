@@ -7,7 +7,7 @@ const BlogList = () => {
   const [menu, setMenu] = useState("All");
 
   return (
-    <>
+    <div>
       <div className="flex justify-center gap-6 my-10">
         <button
           onClick={() => setMenu("All")}
@@ -48,7 +48,7 @@ const BlogList = () => {
           Lifistyle
         </button>
       </div>
-      <div className="flex flex-wrap jutify-arround  gap-1 gap-y-10 mb-16 xl:mx-24 ">
+      <div className="flex flex-wrap justify-around  gap-1 gap-y-10 mb-16 xl:mx-24 ">
         {blog_data
           .filter((item) => (menu === "All" ? true : item.category === menu))
           .map((item, index) => {
@@ -63,7 +63,7 @@ const BlogList = () => {
             );
           })}
       </div>
-    </>
+    </div>
   );
 };
 
