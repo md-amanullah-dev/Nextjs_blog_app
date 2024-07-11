@@ -1,6 +1,5 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
-
 import { SiBloglovin } from "react-icons/si";
 
 export default function Header() {
