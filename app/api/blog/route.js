@@ -1,22 +1,27 @@
 import connectDB from "@/lib/config/db";
 import { NextResponse } from "next/server";
 import {writeFile} from 'fs/promises'
-import { write } from "fs";
 import BlogModel from "@/lib/models/blogModel";
 // Database connection call
 const LoadDB = async () =>{
     await connectDB()
 }
 LoadDB();
-// test server running 
-export async function GET(response){
-    console.log("Blog Get Hit");
-    return NextResponse.json({
-        message:"Api work",
 
+// Get post
+
+export async function GET(request,response){
+    const blog  = await BlogModel.find({});
+    return NextResponse.json({
+        success:true,
+        Blog:blog,
+        message:"Blog List get Successfully!",
+        
     })
+
 }
 
+// Add post 
 export async function POST(request,response){
 const formData = await request.formData();
 const timestamp = Date.now();
@@ -39,9 +44,6 @@ const blogData = {
 }
 
 await BlogModel.create(blogData);
-
-console.log(blogData)
-console.log("Blog saved")
 return NextResponse.json({
     success:true,
     message:"Blog Added Successfully!",
